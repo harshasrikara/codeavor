@@ -48,38 +48,101 @@
 									<h3>Advanced Session<br> 
 									Lead - Atharv</h3>
 								</header>
-								<p>Activity: The Pie of Life <br> 
-									1. Draw one large circle on a piece of paper to represent a typical day in your life<br>
-									2. Divide the circle into different slices<br>
-									3. Each slice represents the amount of time you spend doing different activities <br>
-									Ex: Sleeping, playing an instrument, studying, hanging with friends, physical activity <br>
-									4. Share and guess which pie belongs to whom
-									</p>
-								<p>Problem:</p>
-									<p>1. Given <em>n</em> non-negative integers <em>a1, a2, ..., an</em>, where each represents a point at coordinate (i, ai). n vertical lines are drawn such that the two endpoints of line i is at (i, ai) and (i, 0). Find two lines, which together with x-axis forms a container, such that the container contains the most water. <br>Note: You may not slant the container and n is at least 2. <br> </p>
+								<h5>Activity: The Pie of Life</h5>
+									<ol><span class="image right"><img src="images/pieoflife.png" alt="" /></span>
+										<li>Draw one large circle on a piece of paper to represent a typical day in your life</li>
+										<li>Divide the circle into different slices</li>
+										<li>Each slice represents the amount of time you spend doing different activities</li>
+										<li>Ex: Sleeping, playing an instrument, studying, hanging with friends, physical activity </li>
+										<li>Share and guess which pie belongs to whom</li>
+									</ol>
+								<h5>Problem:</h5>
+									<p>Given <em>n</em> non-negative integers <em>a1, a2, ..., an</em>, where each represents a point at coordinate (i, ai). n vertical lines are drawn such that the two endpoints of line i is at (i, ai) and (i, 0). Find two lines, which together with x-axis forms a container, such that the container contains the most water. <br>Note: You may not slant the container and n is at least 2. <br> </p>
 									<span class="image fit"><img src="images/water.jpeg" alt="" /></span>
-									<p>2. Say you have an array for which the <em>ith</em> element is the price of a given stock on day i.
+									<!-- <p>2. Say you have an array for which the <em>ith</em> element is the price of a given stock on day i.
 										Design an algorithm to find the maximum profit. You may complete as many transactions as you like (i.e., buy one and sell one share of the stock multiple times). <br>
 										Note: You may not engage in multiple transactions at the same time (i.e., you must sell the stock before you buy again).</p>
-									<span class="image fit"><img src="images/water2.jpg" alt="" /></span>
+									<span class="image fit"><img src="images/water2.jpg" alt="" /></span> -->
 								
-								<p>Solution: //gist or //precode</p>
+								<h5>Solution: O(n<sup>2</sup>) and O(n)</h5>
+								<pre><code>
+/**
+* Use two for loops to iterate through every possible combination of indicies
+* to find the maximum area in O(n^2)
+*
+* @param array of numbers that represent height
+* @return maxArea that can be held by the container
+*/
+public static int getMaxAreaSlowly(int[] array) {
+
+	int maxArea = 0;
+	for (int i = 0; i < array.length; i++) {
+		for (int j = 0; j < array.length; j++) {
+			int height1 = array[i];
+			int height2 = array[j];
+
+			int area = Math.min(height1, height2) * (Math.abs(j - i));
+			if (area > maxArea) {
+				maxArea = area;
+			}
+		}
+	}
+	return maxArea;
+}
+								</code></pre>
+								<pre><code>
+/**
+* Two pointer solution that finds maximum area in O(n)
+* Move the pointer that has the short height
+*
+* @param array of numbers that represent height
+* @return maxArea that can be held by the container
+*/
+public static int getMaxArea(int[] array) {
+	int startIndex = 0;
+	int endIndex = array.length - 1;
+
+	int maxArea = 0;
+
+	while (startIndex != endIndex) {
+		int height1 = array[startIndex];
+		int height2 = array[endIndex];
+
+		int minimumHeight = Math.min(height1, height2);
+		int area = minimumHeight * (endIndex - startIndex);
+		if (area > maxArea) {
+			maxArea = area;
+		}
+
+
+		if (height1 > height2) {
+			endIndex--;
+		} else {
+			startIndex++;
+		}
+	}
+
+	return maxArea;
+}
+								</code></pre>
 
 								<header class="major">
 										<span class="date">November 12, 2019</span>
 										<h3>Novice Session<br> 
 										Leads - Ifrit & Harsha</h3>
 									</header>
-									<p>Activity: // description goes here</p>
-									<p>Tutorial: Time & Space Complexity</p>
+									<h5>Activity:</h5>
+									<p>// description goes here</p>
+									<h5>Tutorial: Time & Space Complexity</h5>
 									<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQZqrWP9zonKuhl57ZFL1rZ6kNACqqLszqwHdmMJCc0V6AFaJZNNzXIor0Z7iWc-MfKogPk4NTVR9Yw/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
-									<p>Problem: Given a list of Integers with n elements and a target, find the set of factors that multiply to the target. Challenge: And if none exist then provide the closest.</p>
+									<h5>Problem:</h5>
+										<p>Given a list of Integers with n elements and a target, find the set of factors that multiply to the target. Challenge: And if none exist then provide the closest.</p>
 									<pre><code>
 public static void findMultiple(List<Integer> list, int target) { 
 
 }
 									</code></pre>
-									<p>Solution: //gist or //precode</p>
+									<h5>Solution: O(n<sup>2</sup>) and O(n)</h5>
 									<pre><code>
 /**
 * O(n^2) solution by brute force checking all combinations by iterating through two for loops
@@ -119,9 +182,9 @@ public static void findClosestFactor(List<Integer> list, int target) {
 									</code></pre>
 									<pre><code>
 /**
-* O(n) solution for finding the exact match, implement V2 for most efficient closest factor calculation in O(nlogn)
+* O(n) solution for finding the exact match using hashmap, implement V2 for most efficient closest factor calculation in O(nlogn)
 *
-* @param list   contains the list of all numbers
+* @param list contains the list of all numbers
 * @param target is the value that the factors need to multiply out to or be the closest to
 */
 public static void findClosestFactorV3(List<Integer> list, int target) {
