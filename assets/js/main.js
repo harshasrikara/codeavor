@@ -254,5 +254,44 @@
 			});
 
 		}
+		// code written by Harsha below
+
+			//change ratio of contact images on smaller devices
+
+				breakpoints.on('>large',function() {
+					let items = document.getElementsByClassName("team");
+					for (let i = 0; i < items.length; i++) {
+						items[i].classList.add("col-4");
+						items[i].classList.remove("col-4-xxsmall");
+						items[i].classList.remove("col-6");
+					}
+				});
+				breakpoints.on('large',function() {
+					let items = document.getElementsByClassName("team");
+					for (let i = 0; i < items.length; i++) {
+						items[i].classList.add("col-6");
+						items[i].classList.remove("col-4");
+						items[i].classList.remove("col-4-xxsmall");
+					}
+				});
+				breakpoints.on('medium',function() {
+					let items = document.getElementsByClassName("team");
+					for (let i = 0; i < items.length; i++) {
+						items[i].classList.add("col-6");
+						items[i].classList.remove("col-4");
+						items[i].classList.remove("col-4-xxsmall");
+					}
+				});
+				breakpoints.on('<=small',function() {
+					let items = document.getElementsByClassName("team");
+					for (let i = 0; i < items.length; i++) {
+						items[i].classList.add("col-4-xxsmall");
+						items[i].classList.remove("col-4");
+						items[i].classList.remove("col-6");
+					}
+				});
+
+			
 
 })(jQuery);
+
