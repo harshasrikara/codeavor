@@ -291,7 +291,11 @@
 					}
 				});
 
-			
-
 })(jQuery);
 
+function showCodeSnippet(variable) {
+	document.getElementById(variable).style.display = "initial";
+}
+function hideCodeSnippet(variable) {
+	document.getElementById(variable).style.display = "none";
+}

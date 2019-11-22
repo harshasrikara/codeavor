@@ -52,6 +52,13 @@
 								<h5>Problem:</h5>
 									<p>Given a two dimensional ArrayList of boolean values that represent a maze where 0 represents a wall and 1 represents an open space, write a function that returns whether a path exists from the start to the end. Once you've got that return a List that shows the path from the start to end. Assume index (0,0) is the start of the maze and (n,n) represents the end. Assume that there only exists one path from start to end. Use the following code to initialize your arrayList. Diagonals do not count as a path.<br> </p>
 
+								<h5>Starter code for ArrayList</h5>
+									<!-- Show/Hide buttons -->
+								<ul class="actions small">
+									<li><a href='javascript:showCodeSnippet("helper-code")' class="button primary small">Show</a></li>
+									<li><a href='javascript:hideCodeSnippet("helper-code")' class="button small">Hide</a></li>
+								</ul>
+								<div id="helper-code" style="display: none;">
 									<pre><code>
 List< List< Boolean>> list = new ArrayList<>() {
 	{
@@ -103,8 +110,15 @@ List< List< Boolean>> list = new ArrayList<>() {
 	}
 };
 									</code></pre>
-									<h5>Solution</h5>
-									<pre><code>
+								</div>
+								<h5>Solution</h5>
+								<!-- Show/Hide buttons -->
+								<ul class="actions small">
+									<li><a href='javascript:showCodeSnippet("solution-code")' class="button primary small">Show</a></li>
+									<li><a href='javascript:hideCodeSnippet("solution-code")' class="button small">Hide</a></li>
+								</ul>
+								<div id="solution-code" style="display: none;">
+								<pre><code>
 public static boolean doesPathExist(List<List<Boolean>> list, int i, int j) {
 		if(i < 0 || i >= list.size()) {
 			return false;
@@ -130,7 +144,8 @@ public static boolean doesPathExist(List<List<Boolean>> list, int i, int j) {
 
 		return left || right || up || down;
 	}
-									</code></pre>
+								</code></pre>
+								</div>
 									
 
 								<header class="major">
