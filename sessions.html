@@ -103,8 +103,34 @@ List< List< Boolean>> list = new ArrayList<>() {
 	}
 };
 									</code></pre>
+									<h5>Solution</h5>
+									<pre><code>
+public static boolean doesPathExist(List<List<Boolean>> list, int i, int j) {
+		if(i < 0 || i >= list.size()) {
+			return false;
+		}
+		if(j < 0 || j >= list.get(i).size()) {
+			return false;
+		}
+		if(!list.get(i).get(j)) {
+			return false;
+		}
+		if(i == list.size()-1 && j == list.get(i).size()-1) {
+			return true;
+		}
 
+		List<Boolean> lst = list.get(i);
+		lst.set(j, false);
+		list.set(i, lst);
+		
+		boolean left = doesPathExist(list, i, j-1);
+		boolean right = doesPathExist(list, i, j+1);
+		boolean up = doesPathExist(list, i-1, j);
+		boolean down = doesPathExist(list, i+1, j);
 
+		return left || right || up || down;
+	}
+									</code></pre>
 									
 
 								<header class="major">
