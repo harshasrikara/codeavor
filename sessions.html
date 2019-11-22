@@ -44,6 +44,70 @@
 						<!-- Post -->
 							<section class="post">
 								<header class="major">
+									<span class="date">November 21, 2019</span>
+									<h3>Advanced Session<br> 
+									Lead - Harsha</h3>
+								</header>
+
+								<h5>Problem:</h5>
+									<p>Given a two dimensional ArrayList of boolean values that represent a maze where 0 represents a wall and 1 represents an open space, write a function that returns whether a path exists from the start to the end. Once you've got that return a List that shows the path from the start to end. Assume index (0,0) is the start of the maze and (n,n) represents the end. Assume that there only exists one path from start to end. Use the following code to initialize your arrayList. Diagonals do not count as a path.<br> </p>
+
+									<pre><code>
+List< List< Boolean>> list = new ArrayList<>() {
+	{
+		add(new ArrayList<>() {
+			{
+				add(true);
+				add(false);
+				add(false);
+				add(false);
+				add(true);
+			}
+		});
+		add(new ArrayList<>() {
+			{
+				add(true);
+				add(true);
+				add(true);
+				add(true);
+				add(true);
+			}
+		});
+		add(new ArrayList<>() {
+			{
+				add(false);
+				add(true);
+				add(false);
+				add(false);
+				add(true);
+			}
+		});
+		add(new ArrayList<>() {
+			{
+				add(true);
+				add(true);
+				add(false);
+				add(false);
+				add(false);
+			}
+		});
+		add(new ArrayList<>() {
+			{
+				add(false);
+				add(true);
+				add(true);
+				add(true);
+				add(true);
+			}
+		});
+	}
+};
+									</code></pre>
+
+
+									
+
+								<header class="major">
 									<span class="date">November 14, 2019</span>
 									<h3>Advanced Session<br> 
 									Lead - Atharv</h3>
