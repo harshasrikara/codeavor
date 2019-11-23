@@ -50,15 +50,15 @@
 								</header>
 
 								<h5>Problem:</h5>
-									<p>Given a two dimensional ArrayList of boolean values that represent a maze where 0 represents a wall and 1 represents an open space, write a function that returns whether a path exists from the start to the end. Once you've got that return a List that shows the path from the start to end. Assume index (0,0) is the start of the maze and (n,n) represents the end. Assume that there only exists one path from start to end. Use the following code to initialize your arrayList. Diagonals do not count as a path.<br> </p>
+									<p>Given a two dimensional ArrayList of boolean values that represent a maze where 0 represents a wall and 1 represents an open space, write a function that returns whether a path exists from the start to the end. Assume index (0,0) is the start of the maze and (n,n) represents the end. Assume that there only exists one path from start to end. Use the following code to initialize your arrayList. Diagonals do not count as a path.<br> </p>
 
 								<h5>Starter code for ArrayList</h5>
 									<!-- Show/Hide buttons -->
 								<ul class="actions small">
-									<li><a href='javascript:showCodeSnippet("helper-code")' class="button primary small">Show</a></li>
-									<li><a href='javascript:hideCodeSnippet("helper-code")' class="button small">Hide</a></li>
+									<li><a onclick='hideCodeSnippet("nov-21-starter");return false;' class="button primary small">Hide</a></li>
+									<li><a onclick='showCodeSnippet("nov-21-starter");return false;' class="button small">Show</a></li>
 								</ul>
-								<div id="helper-code" style="display: none;">
+								<div id="nov-21-starter" style="display: none;">
 									<pre><code>
 List< List< Boolean>> list = new ArrayList<>() {
 	{
@@ -111,15 +111,15 @@ List< List< Boolean>> list = new ArrayList<>() {
 };
 									</code></pre>
 								</div>
-								<h5>Solution</h5>
+								<h5>Solution: Recursive O(mn)</h5>
 								<!-- Show/Hide buttons -->
 								<ul class="actions small">
-									<li><a href='javascript:showCodeSnippet("solution-code")' class="button primary small">Show</a></li>
-									<li><a href='javascript:hideCodeSnippet("solution-code")' class="button small">Hide</a></li>
+									<li><a onclick='hideCodeSnippet("nov-21-solution");return false;' class="button primary small">Hide</a></li>
+									<li><a onclick='showCodeSnippet("nov-21-solution");return false;' class="button small">Show</a></li>
 								</ul>
-								<div id="solution-code" style="display: none;">
+								<div id="nov-21-solution" style="display: none;">
 								<pre><code>
-public static boolean doesPathExist(List<List<Boolean>> list, int i, int j) {
+public static boolean doesPathExist(List< List< Boolean>> list, int i, int j) {
 		if(i < 0 || i >= list.size()) {
 			return false;
 		}
@@ -133,7 +133,7 @@ public static boolean doesPathExist(List<List<Boolean>> list, int i, int j) {
 			return true;
 		}
 
-		List<Boolean> lst = list.get(i);
+		List< Boolean> lst = list.get(i);
 		lst.set(j, false);
 		list.set(i, lst);
 		
@@ -169,8 +169,13 @@ public static boolean doesPathExist(List<List<Boolean>> list, int i, int j) {
 										Note: You may not engage in multiple transactions at the same time (i.e., you must sell the stock before you buy again).</p>
 									<span class="image fit"><img src="images/water2.jpg" alt="" /></span> -->
 								
-								<h5>Solution: O(n<sup>2</sup>) and O(n)</h5>
-								<pre><code>
+								<h5>Solution: O(n<sup>2</sup>)</h5>
+								<ul class="actions small">
+									<li><a onclick='hideCodeSnippet("nov-14-solution-slow");return false;' class="button primary small">Hide</a></li>
+									<li><a onclick='showCodeSnippet("nov-14-solution-slow");return false;' class="button small">Show</a></li>
+								</ul>
+								<div id="nov-14-solution-slow" style="display: none;">
+									<pre><code>
 /**
 * Use two for loops to iterate through every possible combination of indicies
 * to find the maximum area in O(n^2)
@@ -194,8 +199,15 @@ public static int getMaxAreaSlowly(int[] array) {
 	}
 	return maxArea;
 }
-								</code></pre>
-								<pre><code>
+									</code></pre>
+								</div>
+								<h5>Solution: O(n)</h5>
+								<ul class="actions small">
+									<li><a onclick='hideCodeSnippet("nov-14-solution-fast");return false;' class="button primary small">Hide</a></li>
+									<li><a onclick='showCodeSnippet("nov-14-solution-fast");return false;' class="button small">Show</a></li>
+								</ul>
+								<div id="nov-14-solution-fast" style="display: none;">
+									<pre><code>
 /**
 * Two pointer solution that finds maximum area in O(n)
 * Move the pointer that has the short height
@@ -229,15 +241,17 @@ public static int getMaxArea(int[] array) {
 
 	return maxArea;
 }
-								</code></pre>
+									</code></pre>
+								</div>
 
 								<header class="major">
 										<span class="date">November 12, 2019</span>
 										<h3>Novice Session<br> 
 										Leads - Ifrit & Harsha</h3>
 									</header>
-									<h5>Activity:</h5>
-									<p>// description goes here</p>
+									<h5>Activity: Who Knows Who Best?</h5>
+									<p>Split in 2 teams. Every person on the other team has 30 seconds to write down their answer on a piece of paper. Crumble the paper up. The other team tries to guess who wrote what answer down as a team by writing down their guesses on the whiteboard. After guesses are made for the round the answers are revealed. At the end of every round the points are tallied up. After 5 rounds, whichever team has the most amount of points win. 
+									</p>
 									<h5>Tutorial: Time & Space Complexity</h5>
 									<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQZqrWP9zonKuhl57ZFL1rZ6kNACqqLszqwHdmMJCc0V6AFaJZNNzXIor0Z7iWc-MfKogPk4NTVR9Yw/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
 									<h5>Problem:</h5>
@@ -247,8 +261,13 @@ public static void findMultiple(List<Integer> list, int target) {
 
 }
 									</code></pre>
-									<h5>Solution: O(n<sup>2</sup>) and O(n)</h5>
-									<pre><code>
+									<h5>Solution: O(n<sup>2</sup>)</h5>
+									<ul class="actions small">
+										<li><a onclick='hideCodeSnippet("nov-12-solution-slow");return false;' class="button primary small">Hide</a></li>
+										<li><a onclick='showCodeSnippet("nov-12-solution-slow");return false;' class="button small">Show</a></li>
+									</ul>
+									<div id="nov-12-solution-slow" style="display: none;">
+										<pre><code>
 /**
 * O(n^2) solution by brute force checking all combinations by iterating through two for loops
 *
@@ -284,7 +303,14 @@ public static void findClosestFactor(List<Integer> list, int target) {
 		System.out.println(num1 + " * " + num2 + " = " + num1 * num2 + " ~ " + target);
 	}
 }
-									</code></pre>
+										</code></pre>
+									</div>
+									<h5>Solution: O(n)</h5>
+									<ul class="actions small">
+										<li><a onclick='hideCodeSnippet("nov-12-solution-fast");return false;' class="button primary small">Hide</a></li>
+										<li><a onclick='showCodeSnippet("nov-12-solution-fast");return false;' class="button small">Show</a></li>
+									</ul>
+									<div id="nov-12-solution-fast" style="display: none;">
 									<pre><code>
 /**
 * O(n) solution for finding the exact match using hashmap, implement V2 for most efficient closest factor calculation in O(nlogn)
@@ -318,6 +344,7 @@ public static void findClosestFactorV3(List<Integer> list, int target) {
 	}
 }
 									</code></pre>
+									</div>
 							</section>
 
 							
