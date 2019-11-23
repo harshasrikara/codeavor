@@ -293,9 +293,19 @@
 
 })(jQuery);
 
-function showCodeSnippet(variable) {
-	document.getElementById(variable).style.display = "initial";
+function displayCodeSnippet(codeSnippet,tag) {
+	if(document.getElementById(tag).innerHTML === "Hide") {
+		document.getElementById(codeSnippet).style.display = "none";
+		document.getElementById(tag).innerHTML = "Show";
+		document.getElementById(tag).classList.remove("primary");
+	}
+	else {
+		document.getElementById(codeSnippet).style.display = "initial";
+		document.getElementById(tag).innerHTML = "Hide";
+		document.getElementById(tag).classList.add("primary");
+	}
+	//document.getElementById(codeSnippet).style.display = "initial";
 }
-function hideCodeSnippet(variable) {
-	document.getElementById(variable).style.display = "none";
-}
+// function hideCodeSnippet(codeSnippet, tag) {
+// 	document.getElementById(codeSnippet).style.display = "none";
+// }

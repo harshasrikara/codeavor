@@ -50,14 +50,15 @@
 								</header>
 
 								<h5>Problem:</h5>
-									<p>Given a two dimensional ArrayList of boolean values that represent a maze where 0 represents a wall and 1 represents an open space, write a function that returns whether a path exists from the start to the end. Assume index (0,0) is the start of the maze and (n,n) represents the end. Assume that there only exists one path from start to end. Use the following code to initialize your arrayList. Diagonals do not count as a path.<br> </p>
+									<p>Given a two dimensional ArrayList of boolean values that represent a maze where <strong>false</strong> represents a wall and <strong>true</strong> represents an open space, write a function that returns whether a path exists from the start to the end. Assume index (0,0) is the start of the maze and (n,n) represents the end. Assume that there only exists one path from start to end. Use the following code to initialize your arrayList. Diagonals do not count as a path.<br> </p>
 
-								<h5>Starter code for ArrayList</h5>
+								<h5 style="display: inline;">Starter code for ArrayList </h5>
 									<!-- Show/Hide buttons -->
-								<ul class="actions small">
-									<li><a onclick='hideCodeSnippet("nov-21-starter");return false;' class="button primary small">Hide</a></li>
-									<li><a onclick='showCodeSnippet("nov-21-starter");return false;' class="button small">Show</a></li>
+								<ul style="display: inline;" class="actions small">
+									<li style="display: inline;"><a id="nov-21-starter-btn" onclick='displayCodeSnippet("nov-21-starter","nov-21-starter-btn");return false;' class="button small">Show</a></li>
+									<li><br></li>
 								</ul>
+								
 								<div id="nov-21-starter" style="display: none;">
 									<pre><code>
 List< List< Boolean>> list = new ArrayList<>() {
@@ -111,11 +112,11 @@ List< List< Boolean>> list = new ArrayList<>() {
 };
 									</code></pre>
 								</div>
-								<h5>Solution: Recursive O(mn)</h5>
+								<h5 style="display: inline;">Solution: Recursive O(mn)  &nbsp;</h5>
 								<!-- Show/Hide buttons -->
-								<ul class="actions small">
-									<li><a onclick='hideCodeSnippet("nov-21-solution");return false;' class="button primary small">Hide</a></li>
-									<li><a onclick='showCodeSnippet("nov-21-solution");return false;' class="button small">Show</a></li>
+								<ul style="display: inline;" class="actions small">
+									<li style="display: inline;"><a id="nov-21-solution-btn" onclick='displayCodeSnippet("nov-21-solution","nov-21-solution-btn");return false;' class="button small">Show</a></li>
+									<li><br></li>
 								</ul>
 								<div id="nov-21-solution" style="display: none;">
 								<pre><code>
@@ -169,10 +170,10 @@ public static boolean doesPathExist(List< List< Boolean>> list, int i, int j) {
 										Note: You may not engage in multiple transactions at the same time (i.e., you must sell the stock before you buy again).</p>
 									<span class="image fit"><img src="images/water2.jpg" alt="" /></span> -->
 								
-								<h5>Solution: O(n<sup>2</sup>)</h5>
-								<ul class="actions small">
-									<li><a onclick='hideCodeSnippet("nov-14-solution-slow");return false;' class="button primary small">Hide</a></li>
-									<li><a onclick='showCodeSnippet("nov-14-solution-slow");return false;' class="button small">Show</a></li>
+								<h5 style="display: inline;">Solution: O(n<sup>2</sup>)</h5>
+								<ul style="display: inline;" class="actions small">
+									<li style="display: inline;"><a id="nov-14-solution-slow-btn" onclick='displayCodeSnippet("nov-14-solution-slow","nov-14-solution-slow-btn");return false;' class="button small">Show</a></li>
+									<li><br></li>
 								</ul>
 								<div id="nov-14-solution-slow" style="display: none;">
 									<pre><code>
@@ -201,10 +202,10 @@ public static int getMaxAreaSlowly(int[] array) {
 }
 									</code></pre>
 								</div>
-								<h5>Solution: O(n)</h5>
-								<ul class="actions small">
-									<li><a onclick='hideCodeSnippet("nov-14-solution-fast");return false;' class="button primary small">Hide</a></li>
-									<li><a onclick='showCodeSnippet("nov-14-solution-fast");return false;' class="button small">Show</a></li>
+								<h5 style="display: inline;">Solution: O(n) &nbsp;</h5>
+								<ul style="display: inline;" class="actions small">
+									<li style="display: inline;"><a id="nov-14-solution-fast-btn" onclick='displayCodeSnippet("nov-14-solution-fast","nov-14-solution-fast-btn");return false;' class="button small">Show</a></li>
+									<li><br></li>
 								</ul>
 								<div id="nov-14-solution-fast" style="display: none;">
 									<pre><code>
@@ -261,10 +262,10 @@ public static void findMultiple(List<Integer> list, int target) {
 
 }
 									</code></pre>
-									<h5>Solution: O(n<sup>2</sup>)</h5>
-									<ul class="actions small">
-										<li><a onclick='hideCodeSnippet("nov-12-solution-slow");return false;' class="button primary small">Hide</a></li>
-										<li><a onclick='showCodeSnippet("nov-12-solution-slow");return false;' class="button small">Show</a></li>
+									<h5 style="display: inline;">Solution: O(n<sup>2</sup>)</h5>
+									<ul style="display: inline;" class="actions small">
+										<li style="display: inline;"><a id="nov-12-solution-slow-btn" onclick='displayCodeSnippet("nov-12-solution-slow","nov-12-solution-slow-btn");return false;' class="button small">Show</a></li>
+										<li><br></li>
 									</ul>
 									<div id="nov-12-solution-slow" style="display: none;">
 										<pre><code>
@@ -305,10 +306,10 @@ public static void findClosestFactor(List<Integer> list, int target) {
 }
 										</code></pre>
 									</div>
-									<h5>Solution: O(n)</h5>
-									<ul class="actions small">
-										<li><a onclick='hideCodeSnippet("nov-12-solution-fast");return false;' class="button primary small">Hide</a></li>
-										<li><a onclick='showCodeSnippet("nov-12-solution-fast");return false;' class="button small">Show</a></li>
+									<h5 style="display: inline;">Solution: O(n) &nbsp;</h5>
+									<ul style="display: inline;" class="actions small">
+										<li style="display: inline;"><a id="nov-12-solution-fast-btn" onclick='displayCodeSnippet("nov-12-solution-fast","nov-12-solution-fast-btn");return false;' class="button small">Show</a></li>
+										<li><br></li>
 									</ul>
 									<div id="nov-12-solution-fast" style="display: none;">
 									<pre><code>
