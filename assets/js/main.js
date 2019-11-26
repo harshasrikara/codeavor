@@ -290,9 +290,14 @@
 						items[i].classList.remove("col-6");
 					}
 				});
+			
+			//make presentation slides have dynamic sizing
+			
+			/* some code goes here */ 
 
 })(jQuery);
 
+// trigger code to display 
 function displayCodeSnippet(codeSnippet,tag) {
 	if(document.getElementById(tag).innerHTML === "Hide") {
 		document.getElementById(codeSnippet).style.display = "none";
@@ -304,8 +309,4 @@ function displayCodeSnippet(codeSnippet,tag) {
 		document.getElementById(tag).innerHTML = "Hide";
 		document.getElementById(tag).classList.add("primary");
 	}
-	//document.getElementById(codeSnippet).style.display = "initial";
 }
-// function hideCodeSnippet(codeSnippet, tag) {
-// 	document.getElementById(codeSnippet).style.display = "none";
-// }

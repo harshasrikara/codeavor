@@ -254,11 +254,12 @@ public static int getMaxArea(int[] array) {
 									<p>Split in 2 teams. Every person on the other team has 30 seconds to write down their answer on a piece of paper. Crumble the paper up. The other team tries to guess who wrote what answer down as a team by writing down their guesses on the whiteboard. After guesses are made for the round the answers are revealed. At the end of every round the points are tallied up. After 5 rounds, whichever team has the most amount of points win. 
 									</p>
 									<h5>Tutorial: Time & Space Complexity</h5>
-									<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQZqrWP9zonKuhl57ZFL1rZ6kNACqqLszqwHdmMJCc0V6AFaJZNNzXIor0Z7iWc-MfKogPk4NTVR9Yw/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+									<div class="iframe-container">
+									<iframe id="nov-12-presentation" src="https://docs.google.com/presentation/d/e/2PACX-1vQZqrWP9zonKuhl57ZFL1rZ6kNACqqLszqwHdmMJCc0V6AFaJZNNzXIor0Z7iWc-MfKogPk4NTVR9Yw/embed?start=false&loop=false&delayms=3000" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe></div>
 									<h5>Problem:</h5>
 										<p>Given a list of Integers with n elements and a target, find the set of factors that multiply to the target. Challenge: And if none exist then provide the closest.</p>
 									<pre><code>
-public static void findMultiple(List<Integer> list, int target) { 
+public static void findMultiple(List< Integer> list, int target) { 
 
 }
 									</code></pre>
@@ -275,7 +276,7 @@ public static void findMultiple(List<Integer> list, int target) {
 * @param list   contains the list of all numbers
 * @param target is the value that the factors need to multiply out to or be the closest to
 */
-public static void findClosestFactor(List<Integer> list, int target) {
+public static void findClosestFactor(List< Integer> list, int target) {
 
 	int num1 = 0;
 	int num2 = 0;
@@ -319,8 +320,8 @@ public static void findClosestFactor(List<Integer> list, int target) {
 * @param list contains the list of all numbers
 * @param target is the value that the factors need to multiply out to or be the closest to
 */
-public static void findClosestFactorV3(List<Integer> list, int target) {
-	Map<Integer, Integer> map = new HashMap<>();
+public static void findClosestFactorV3(List< Integer> list, int target) {
+	Map< Integer, Integer> map = new HashMap<>();
 	for (int i = 0; i < list.size(); i++) {
 		if (map.get(list.get(i)) == null) {
 			map.put(list.get(i), 1);
