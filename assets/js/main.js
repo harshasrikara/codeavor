@@ -254,7 +254,7 @@
 			});
 
 		}
-		// code written by Harsha below
+		// code written by Harsha Srikara below
 
 			//change ratio of contact images on smaller devices
 
@@ -265,6 +265,7 @@
 						items[i].classList.remove("col-4-xxsmall");
 						items[i].classList.remove("col-6");
 					}
+					document.getElementById("tictactoe").style.visibility = "visible";
 				});
 				breakpoints.on('large',function() {
 					let items = document.getElementsByClassName("team");
@@ -273,6 +274,7 @@
 						items[i].classList.remove("col-4");
 						items[i].classList.remove("col-4-xxsmall");
 					}
+					document.getElementById("tictactoe").style.visibility = "hidden";
 				});
 				breakpoints.on('medium',function() {
 					let items = document.getElementsByClassName("team");
@@ -281,6 +283,7 @@
 						items[i].classList.remove("col-4");
 						items[i].classList.remove("col-4-xxsmall");
 					}
+					document.getElementById("tictactoe").style.visibility = "hidden";
 				});
 				breakpoints.on('<=small',function() {
 					let items = document.getElementsByClassName("team");
@@ -289,6 +292,7 @@
 						items[i].classList.remove("col-4");
 						items[i].classList.remove("col-6");
 					}
+					document.getElementById("tictactoe").style.visibility = "hidden";
 				});
 			
 			//make presentation slides have dynamic sizing
@@ -309,4 +313,75 @@ function displayCodeSnippet(codeSnippet,tag) {
 		document.getElementById(tag).innerHTML = "Hide";
 		document.getElementById(tag).classList.add("primary");
 	}
+}
+
+//tic tac toe driver code
+function activateTicTacToeMode() {
+	document.getElementById("meetOurTeam").innerHTML = "Tic Tac Toe Mode Activated";
+}
+
+function tictactoe(imgID) {
+	if(document.getElementById("meetOurTeam").innerHTML === "Tic Tac Toe Mode Activated") {
+		let value = document.getElementById("tictactoeValue").innerHTML;
+		if(value === "Circle") {
+			if(document.getElementById(imgID).src.includes("circle")) {
+
+			}
+			else if(document.getElementById(imgID).src.includes("cross")) {
+
+			}
+			else {
+				document.getElementById("tictactoeValue").innerHTML = "Cross";
+				document.getElementById(imgID).src = "images/circle.png";
+			}
+		}
+		else {
+			if(document.getElementById(imgID).src.includes("circle")) {
+
+			}
+			else if(document.getElementById(imgID).src.includes("cross")) {
+
+			}
+			else {
+				document.getElementById("tictactoeValue").innerHTML = "Circle";
+				document.getElementById(imgID).src = "images/cross.png";
+			}
+		}
+		validateTicTacToe();
+	}
+}
+
+function validateTicTacToe() {
+	checkThree("ifrit", "shivani", "aashish");
+	checkThree("gautam", "sanjeev", "sivam");
+	checkThree("vamika", "sanjana", "anirudh");
+	checkThree("ifrit", "gautam", "vamika");
+	checkThree("shivani", "sanjeev", "sanjana");
+	checkThree("aashish", "sivam", "anirudh");
+	checkThree("ifrit", "sanjeev", "anirudh");
+	checkThree("aashish", "sanjeev", "vamika");
+}
+
+function checkThree(idOne, idTwo, idThree) {
+	if(document.getElementById(idOne).src === document.getElementById(idTwo).src) {
+		if(document.getElementById(idTwo).src === document.getElementById(idThree).src) {
+			if(document.getElementById(idOne).src.includes("circle.png")) {
+				document.getElementById("meetOurTeam").innerHTML = "Circle Wins!";
+				document.getElementById(idOne).src = "images/circlePurple.png";
+				document.getElementById(idTwo).src = "images/circlePurple.png";
+				document.getElementById(idThree).src = "images/circlePurple.png";
+			}
+			else {
+				document.getElementById("meetOurTeam").innerHTML = "Cross Wins!";
+				document.getElementById(idOne).src = "images/crossPurple.png";
+				document.getElementById(idTwo).src = "images/crossPurple.png";
+				document.getElementById(idThree).src = "images/crossPurple.png";
+			}
+		}
+	}
+}
+
+function resetImages() {
+	document.getElementById("ifrit").src = "images/profiles/ifrit.jpg";
+	document.getElementById("shivani").src = "images/profiles/shivani.jpeg";
 }

@@ -70,12 +70,15 @@
 
 									<hr>
 
-									<h3>Meet our Team</h3>
+									<h3 id="meetOurTeam">Meet our Team
+										<a id="reset" onclick="resetImages();return false;" style="display: none; float: right;" class="icon solid fa-lg fa-undo"><span class="label">Reset</span></a>
+										<a id="tictactoe" onclick="activateTicTacToeMode();" style="float: right;" class="icon solid fa-lg fa-user-secret"><span class="label">GitHub</span></a></h3>
+									<div id="tictactoeValue" style="display: none;">Circle</div>
 									<!-- <span class="image fit"><img src="images/groupphoto.jpg" alt="" /></span> -->
 									<div class="box alt">
 										<div class="row gtr-50 gtr-uniform">
 											<div class="team col-4">
-												<span class="image fit"><a class="image"><img src="images/profiles/ifrit.jpg" alt="" /></a>
+												<span class="image fit"><a class="image"><img id="ifrit" onclick="tictactoe('ifrit');return false;" src="images/profiles/ifrit.jpg" alt="" /></a>
 													<p style="float: left; padding: 0; margin: 0;">Ifrit Maruf</p>
 													<div style="float: right;">
 														<a href="#" class="icon brands fa-lg fa-github"><span class="label">GitHub</span></a>
@@ -86,7 +89,7 @@
 											</div>
 											
 											<div class="team col-4">
-												<span class="image fit"><a class="image"><img src="images/profiles/shivani.jpeg" alt="" /></a>
+												<span class="image fit"><a class="image"><img id="shivani" onclick="tictactoe('shivani');return false;" src="images/profiles/shivani.jpeg" alt="" /></a>
 													<p style="float: left; padding: 0; margin: 0;">Shivani Gandhi</p>
 													<div style="float: right;">
 														<a href="" target="_blank" class="icon brands fa-lg fa-github"><span class="label">GitHub</span></a>
@@ -97,7 +100,7 @@
 											</div>
 
 											<div class="team col-4">
-												<span class="image fit"><a class="image"><img src="images/profiles/aashish.jpeg" alt="" /></a>
+												<span class="image fit"><a class="image"><img id="aashish" onclick="tictactoe('aashish');return false;" src="images/profiles/aashish.jpeg" alt="" /></a>
 													<p style="float: left; padding: 0; margin: 0;">Aashish Sharma</p>
 													<div style="float: right;">
 														<a href="http://github.com/aashish2057" target="_blank" class="icon brands fa-lg fa-github"><span class="label">GitHub</span></a>
@@ -108,7 +111,7 @@
 											</div>
 											<!-- Link Break -->
 											<div class="team col-4">
-												<span class="image fit"><a class="image"><img src="images/profiles/gautam.jpg" alt="" /></a>
+												<span class="image fit"><a class="image"><img id="gautam" onclick="tictactoe('gautam');return false;" src="images/profiles/gautam.jpg" alt="" /></a>
 													<p style="float: left; padding: 0; margin: 0;">Gautam Sapre</p>
 													<div style="float: right;">
 														<a href="https://www.github.com/gautamsapre" target="_blank" class="icon brands fa-lg fa-github"><span class="label">GitHub</span></a>
@@ -118,7 +121,7 @@
 												</span>
 											</div>
 											<div class="team col-4">
-												<span class="image fit"><a class="image"><img src="images/profiles/sanjeev.jpeg" alt="" /></a>
+												<span class="image fit"><a class="image"><img id="sanjeev" onclick="tictactoe('sanjeev');return false;" src="images/profiles/sanjeev.jpeg" alt="" /></a>
 													<p style="float: left; padding: 0; margin: 0;">Sanjeev Penupala</p>
 													<div style="float: right;">
 														<a href="http://github.com/spenpal2000" target="_blank" class="icon brands fa-lg fa-github"><span class="label">GitHub</span></a>
@@ -128,7 +131,7 @@
 												</span>
 											</div>
 											<div class="team col-4">
-												<span class="image fit"><a class="image"><img src="images/profiles/sivam.jpg" alt="" /></a>
+												<span class="image fit"><a class="image"><img id="sivam" onclick="tictactoe('sivam');return false;" src="images/profiles/sivam.jpg" alt="" /></a>
 													<p style="float: left; padding: 0; margin: 0;">Sivam Patel</p>
 													<div style="float: right;">
 														<a href="#" class="icon brands fa-lg fa-github"><span class="label">GitHub</span></a>
@@ -139,7 +142,7 @@
 											</div>
 											<!-- Link Break -->
 											 <div class="team col-4">
-												<span class="image fit"><a class="image"><img src="images/profiles/vamika.jpeg" alt="" /></a>
+												<span class="image fit"><a class="image"><img id="vamika" onclick="tictactoe('vamika');return false;" src="images/profiles/vamika.jpeg" alt="" /></a>
 													<p style="float: left; padding: 0; margin: 0;">Vamika Chatlani</p>
 													<div style="float: right;">
 														<a href="#" class="icon brands fa-lg fa-github"><span class="label">GitHub</span></a>
@@ -149,7 +152,7 @@
 												</span>
 											</div>
 											<div class="team col-4">
-												<span class="image fit"><a class="image"><img src="images/profiles/sanjana.jpg" alt="" /></a>
+												<span class="image fit"><a class="image"><img id="sanjana" onclick="tictactoe('sanjana');return false;" src="images/profiles/sanjana.jpg" alt="" /></a>
 													<p style="float: left; padding: 0; margin: 0;">Sanjana Sivakumar</p>
 													<div style="float: right;">
 														<a href="#" class="icon brands fa-lg fa-github"><span class="label">GitHub</span></a>
@@ -159,7 +162,7 @@
 												</span>
 											</div>
 											 <div class="team col-4">
-												<span class="image fit"><a class="image"><img src="images/profiles/anirudh.jpeg" alt="" /></a>
+												<span class="image fit"><a class="image"><img id="anirudh" onclick="tictactoe('anirudh');return false;" src="images/profiles/anirudh.jpeg" alt="" /></a>
 													<p style="float: left; padding: 0; margin: 0;">Anirudh Emmadi</p>
 													<div style="float: right;">
 														<a href="#" class="icon brands fa-lg fa-github"><span class="label">GitHub</span></a>
