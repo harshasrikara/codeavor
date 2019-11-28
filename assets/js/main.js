@@ -321,7 +321,7 @@ function activateTicTacToeMode() {
 }
 
 function tictactoe(imgID) {
-	if(document.getElementById("meetOurTeam").innerHTML === "Tic Tac Toe Mode Activated") {
+	if(document.getElementById("meetOurTeam").innerHTML.includes("Tic Tac Toe Mode Activated")) {
 		let value = document.getElementById("tictactoeValue").innerHTML;
 		if(value === "Circle") {
 			if(document.getElementById(imgID).src.includes("circle")) {
@@ -366,22 +366,35 @@ function checkThree(idOne, idTwo, idThree) {
 	if(document.getElementById(idOne).src === document.getElementById(idTwo).src) {
 		if(document.getElementById(idTwo).src === document.getElementById(idThree).src) {
 			if(document.getElementById(idOne).src.includes("circle.png")) {
-				document.getElementById("meetOurTeam").innerHTML = "Circle Wins!";
+				document.getElementById("meetOurTeam").innerHTML = "Circle Wins!<a id='reset' onclick='resetImages();return false;' style='display: none; float: right;' class='icon solid fa-lg fa-undo'><span class='label'>Reset</span></a>";
 				document.getElementById(idOne).src = "images/circlePurple.png";
 				document.getElementById(idTwo).src = "images/circlePurple.png";
 				document.getElementById(idThree).src = "images/circlePurple.png";
+
+				document.getElementById("reset").style.display = "initial";
 			}
 			else {
-				document.getElementById("meetOurTeam").innerHTML = "Cross Wins!";
+				document.getElementById("meetOurTeam").innerHTML = "Cross Wins!<a id='reset' onclick='resetImages();return false;' style='display: none; float: right;' class='icon solid fa-lg fa-undo'><span class='label'>Reset</span></a>";
 				document.getElementById(idOne).src = "images/crossPurple.png";
 				document.getElementById(idTwo).src = "images/crossPurple.png";
 				document.getElementById(idThree).src = "images/crossPurple.png";
+
+				document.getElementById("reset").style.display = "initial";
 			}
 		}
 	}
 }
-
 function resetImages() {
 	document.getElementById("ifrit").src = "images/profiles/ifrit.jpg";
 	document.getElementById("shivani").src = "images/profiles/shivani.jpeg";
+	document.getElementById("aashish").src = "images/profiles/aashish.jpeg";
+	document.getElementById("gautam").src = "images/profiles/gautam.jpg";
+	document.getElementById("sanjeev").src = "images/profiles/sanjeev.jpeg";
+	document.getElementById("sivam").src = "images/profiles/sivam.jpg";
+	document.getElementById("vamika").src = "images/profiles/vamika.jpeg";
+	document.getElementById("sanjana").src = "images/profiles/sanjana.jpg";
+	document.getElementById("anirudh").src = "images/profiles/anirudh.jpeg";
+
+	document.getElementById("meetOurTeam").innerHTML = "Meet Our Team<a id='reset' onclick='resetImages();return false;' style='display: none; float: right;' class='icon solid fa-lg fa-undo'><span class='label'>Reset</span></a><a id='tictactoe' onclick='activateTicTacToeMode();' style='float: right;' class='icon solid fa-lg fa-user-secret'><span class='label'>GitHub</span></a>";
+	
 }
