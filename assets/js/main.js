@@ -360,6 +360,7 @@ function validateTicTacToe() {
 	checkThree("aashish", "sivam", "anirudh");
 	checkThree("ifrit", "sanjeev", "anirudh");
 	checkThree("aashish", "sanjeev", "vamika");
+	checkAll();
 }
 
 function checkThree(idOne, idTwo, idThree) {
@@ -384,6 +385,19 @@ function checkThree(idOne, idTwo, idThree) {
 		}
 	}
 }
+
+function checkAll() {
+	let status = true;
+	let boxes = document.getElementsByClassName("img");
+	for(i = 0;i<boxes.length;i++) {
+		status = status && (boxes[i].src.includes("circle") || boxes[i].src.includes("cross"));
+	}
+	if(status === true) {
+		document.getElementById("meetOurTeam").innerHTML = "Game Over!<a id='reset' onclick='resetImages();return false;' style='display: none; float: right;' class='icon solid fa-lg fa-undo'><span class='label'>Reset</span></a>";
+		document.getElementById("reset").style.display = "initial";
+	}
+}
+
 function resetImages() {
 	document.getElementById("ifrit").src = "images/profiles/ifrit.jpg";
 	document.getElementById("shivani").src = "images/profiles/shivani.jpeg";
@@ -395,6 +409,6 @@ function resetImages() {
 	document.getElementById("sanjana").src = "images/profiles/sanjana.jpg";
 	document.getElementById("anirudh").src = "images/profiles/anirudh.jpeg";
 
-	document.getElementById("meetOurTeam").innerHTML = "Meet Our Team<a id='reset' onclick='resetImages();return false;' style='display: none; float: right;' class='icon solid fa-lg fa-undo'><span class='label'>Reset</span></a><a id='tictactoe' onclick='activateTicTacToeMode();' style='float: right;' class='icon solid fa-lg fa-user-secret'><span class='label'>GitHub</span></a>";
+	document.getElementById("meetOurTeam").innerHTML = "Meet Our Team<a id='tictactoe' onclick='activateTicTacToeMode();' style='float: right;' class='icon solid fa-lg fa-user-secret'><span class='label'>GitHub</span></a>";
 	
 }
