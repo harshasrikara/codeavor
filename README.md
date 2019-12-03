@@ -1,6 +1,4 @@
 # codeavor
-Founder - Harsha Srikara
-
 Code, create, collaborate
 
 Credits:
@@ -24,3 +22,5 @@ Credits:
 Contributors: 
 	Harsha Srikara <harshasrikara@gmail.com>
 		
+Founders - Harsha Srikara & Atharv Jain <br>
+Team - Gautam Sapre, Aashish Sharma, Sanjeev Penupala, Anirudh Emmadi, Sivam Patel, Shivani Gandhi, Vamika Chatlani, Ifrit Maruf, Sanjana Sivakumar
