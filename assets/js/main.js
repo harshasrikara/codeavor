@@ -283,7 +283,9 @@
 			//change ratio of contact images on smaller devices
 
 				breakpoints.on('>large',function() {
-					document.querySelector(".bg").style = 'background-image: url("../../images/overlay.png"), linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("../../images/bg.jpg");';
+					if(location.href.split("/").slice(-1)[0] === "index.html") {
+						document.querySelector(".bg").style = 'background-image: url("../../images/overlay.png"), linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("../../images/bg.jpg");';
+					}
 					let items = document.getElementsByClassName("team");
 					for (let i = 0; i < items.length; i++) {
 						items[i].classList.add("col-4");
@@ -442,6 +444,9 @@ function resetImages() {
 	
 }
 
+function fadedBackground() {
+	document.querySelector(".bg").style = 'background-image: url("../../images/overlay.png"), linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("../../images/bg.jpg");';
+}
 // function groupBackground() {
 // 	var background = document.getElementById("wrapper");
 // 	console.log(document);
