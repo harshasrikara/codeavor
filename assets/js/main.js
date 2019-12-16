@@ -51,9 +51,16 @@
 
 		$this.each(function() {
 
-			var $t = $(this),
-				$bg = $('<div class="bg"></div>').appendTo($t),
-				on, off;
+			var $t = $(this), $bg = $('<div class="bg"></div>').appendTo($t), on, off;
+			// console.log($bg.css("background-image"));
+			// $bg.id = "background";
+			// console.log(window.getComputedStyle(document.querySelector(".bg")));
+			// document.querySelector(".bg").style = 'background-image: url("../../images/overlay.png"), linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("../../images/bg.jpg");';
+			// console.log(window.getComputedStyle(document.querySelector(".bg")));
+			// console.log(document.getElementById("background"));
+			// $bg.css({'background-image':'url("../../images/overlay.png"), linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("../../images/bg.jpg");'});
+			// $bg.backgroundImage('url("../../images/overlay.png"), linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("../../images/bg.jpg");');
+			// console.log($bg.css("background-image"));
 
 			on = function() {
 
@@ -67,6 +74,7 @@
 						var pos = parseInt($window.scrollTop()) - parseInt($t.position().top);
 
 						$bg.css('transform', 'matrix(1,0,0,1,0,' + (pos * intensity) + ')');
+					
 
 					});
 
@@ -217,8 +225,9 @@
 
 			// Hide intro on scroll (> small).
 				breakpoints.on('>small', function() {
-
+					
 					$main.unscrollex();
+					
 
 					$main.scrollex({
 						mode: 'bottom',
@@ -226,9 +235,12 @@
 						bottom: '-50vh',
 						enter: function() {
 							$intro.addClass('hidden');
+							document.querySelector(".bg").style = 'background-image: url("../../images/overlay.png"), linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("../../images/bg_back.jpg");';
+
 						},
 						leave: function() {
 							$intro.removeClass('hidden');
+							document.querySelector(".bg").style = 'background-image: url("../../images/overlay.png"), linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("../../images/bg.jpg");';
 						}
 					});
 
@@ -412,3 +424,17 @@ function resetImages() {
 	document.getElementById("meetOurTeam").innerHTML = "Meet Our Team<a id='tictactoe' onclick='activateTicTacToeMode();' style='float: right;' class='icon solid fa-lg fa-user-secret'><span class='label'>GitHub</span></a>";
 	
 }
+
+// function groupBackground() {
+// 	var background = document.getElementById("wrapper");
+// 	console.log(document);
+// 	background.style.backgroundImage = 'url("../../images/overlay.png"), linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("../../images/bg.jpg");';
+// 	console.log("changing to group background");
+// }
+
+// function fadedBackground() {
+// 	var background = document.getElementsByClassName("bg fixed");
+// 	console.log(background.css("background-image"));
+// 	background[0].style.backgroundImage = 'url("../../images/overlay.png"), linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("../../images/bg_back.jpg");';
+// 	console.log("changing to faded background");
+// }
