@@ -235,12 +235,24 @@
 						bottom: '-50vh',
 						enter: function() {
 							$intro.addClass('hidden');
-							document.querySelector(".bg").style = 'background-image: url("../../images/overlay.png"), linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("../../images/bg_back.jpg");';
+							breakpoints.on('>xlarge',function() {
+								document.querySelector(".bg").style = 'background-image: url("../../images/overlay.png"), linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("../../images/bg_back.jpg");';
+							});
+							breakpoints.on('<=xlarge',function() {
+								document.querySelector(".bg").style = 'background-image: url("../../images/overlay.png"), linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("../../images/bg_back.jpg");';
+							});
+							// document.querySelector(".bg").style = 'background-image: url("../../images/overlay.png"), linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("../../images/bg_back.jpg");';
 
 						},
 						leave: function() {
 							$intro.removeClass('hidden');
-							document.querySelector(".bg").style = 'background-image: url("../../images/overlay.png"), linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("../../images/bg.jpg");';
+							breakpoints.on('>xlarge',function() {
+								document.querySelector(".bg").style = 'background-image: url("../../images/overlay.png"), linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("../../images/bg.jpg");';
+							});
+							breakpoints.on('<=xlarge',function() {
+								document.querySelector(".bg").style = 'background-image: url("../../images/overlay.png"), linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("../../images/bg_back.jpg");';
+							});
+							// document.querySelector(".bg").style = 'background-image: url("../../images/overlay.png"), linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("../../images/bg.jpg");';
 						}
 					});
 
@@ -307,7 +319,11 @@
 					document.getElementById("tictactoe").style.visibility = "hidden";
 				});
 			
-			//make presentation slides have dynamic sizing
+
+			//TODO: make presentation slides have dynamic sizing
+
+
+
 			
 			/* some code goes here */ 
 
