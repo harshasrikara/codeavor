@@ -112,7 +112,7 @@ List< List< Boolean>> list = new ArrayList<>() {
 };
 									</code></pre>
 								</div>
-								<h5 style="display: inline;">Solution: Recursive O(mn)  &nbsp;</h5>
+								<h5 style="display: inline;">Solution: Recursive O(MN)  &nbsp;</h5>
 								<!-- Show/Hide buttons -->
 								<ul style="display: inline;" class="actions small">
 									<li style="display: inline;"><a id="nov-21-solution-btn" onclick='displayCodeSnippet("nov-21-solution","nov-21-solution-btn");return false;' class="button small">Show</a></li>
@@ -201,7 +201,7 @@ public static int getMaxAreaSlowly(int[] array) {
 }
 									</code></pre>
 								</div>
-								<h5 style="display: inline;">Solution: O(n) &nbsp;</h5>
+								<h5 style="display: inline;">Solution: O(N) &nbsp;</h5>
 								<ul style="display: inline;" class="actions small">
 									<li style="display: inline;"><a id="nov-14-solution-fast-btn" onclick='displayCodeSnippet("nov-14-solution-fast","nov-14-solution-fast-btn");return false;' class="button small">Show</a></li>
 									<li><br></li>
@@ -262,7 +262,7 @@ public static void findMultiple(List< Integer> list, int target) {
 
 }
 									</code></pre>
-									<h5 style="display: inline;">Solution: O(n<sup>2</sup>)</h5>
+									<h5 style="display: inline;">Solution: O(N<sup>2</sup>)</h5>
 									<ul style="display: inline;" class="actions small">
 										<li style="display: inline;"><a id="nov-12-solution-slow-btn" onclick='displayCodeSnippet("nov-12-solution-slow","nov-12-solution-slow-btn");return false;' class="button small">Show</a></li>
 										<li><br></li>
@@ -306,7 +306,7 @@ public static void findClosestFactor(List< Integer> list, int target) {
 }
 										</code></pre>
 									</div>
-									<h5 style="display: inline;">Solution: O(n) &nbsp;</h5>
+									<h5 style="display: inline;">Solution: O(N) &nbsp;</h5>
 									<ul style="display: inline;" class="actions small">
 										<li style="display: inline;"><a id="nov-12-solution-fast-btn" onclick='displayCodeSnippet("nov-12-solution-fast","nov-12-solution-fast-btn");return false;' class="button small">Show</a></li>
 										<li><br></li>
@@ -428,7 +428,7 @@ public boolean isAnagram (String a, String b) {
 
 }
 								</code></pre>
-								<h5 style="display: inline;">Solution: O(nlog(n)) &nbsp;</h5>
+								<h5 style="display: inline;">Solution: O(N) &nbsp;</h5>
 								<ul style="display: inline;" class="actions small">
 									<li style="display: inline;"><a id="oct-1-2-solution-fast-btn" onclick='displayCodeSnippet("oct-1-2-solution-fast","oct-1-2-solution-fast-btn");return false;' class="button small">Show</a></li>
 									<li><br></li>
@@ -438,7 +438,46 @@ public boolean isAnagram (String a, String b) {
 public boolean isAnagram (String a, String b) {
 	int n1 = a.length;
 	int n2 = b.length;
-	if (a!= b) {
+	if (n1!= n2) {
+		return false;
+	}
+	Map< String, Integer> str1 = new HashMap<>();
+	//add letters and frequency to hashmap
+	for(int i = 0;i < a.length;i++) {
+		String letter1 = a.charAt(i) + "";
+		if(str1.get(letter1) == null) {
+			str1.put(letter1, 1);
+		}
+		else {
+			str1.replace(letter1, str1.get(i) + 1);
+		}
+	}
+	//check if letters are present
+	for(int i =0;i < b.length;i++) {
+		String letter1 = b.charAt(i) + "";
+		if(str1.get(letter1) == null || str1.get(letter1) == 0) {
+			return false;
+		}
+		else {
+			str1.replace(letter1, str1.get(letter1) - 1);
+		}
+	}
+	return true;
+}
+								
+									</code></pre>
+								</div>
+								<h5 style="display: inline;">Solution: O(Nlog(N)) &nbsp;</h5>
+								<ul style="display: inline;" class="actions small">
+									<li style="display: inline;"><a id="oct-1-2-solution-slow-btn" onclick='displayCodeSnippet("oct-1-2-solution-slow","oct-1-2-solution-slow-btn");return false;' class="button small">Show</a></li>
+									<li><br></li>
+								</ul>
+								<div id="oct-1-2-solution-slow" style="display: none;">
+									<pre><code>
+public boolean isAnagram (String a, String b) {
+	int n1 = a.length;
+	int n2 = b.length;
+	if (n1!= n2) {
 		return false;
 	}
 	char [] str1 = a.toCharArray();
