@@ -454,7 +454,9 @@ function fadedBackground() {
 }
 
 function onModalClick(modalName) {
-	document.getElementById(modalName).style.display = "block";
+	if(document.getElementById("reset").style.display != "initial") { //this if statement needs to get itself figured out
+		document.getElementById(modalName).style.display = "block";
+	}
 }
 
 function onCloseClick(modalName) {
