@@ -452,16 +452,25 @@ function resetImages() {
 function fadedBackground() {
 	document.querySelector(".bg").style = 'background-image: url("../../images/overlay.png"), linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("../../images/bg.jpg");';
 }
-// function groupBackground() {
-// 	var background = document.getElementById("wrapper");
-// 	console.log(document);
-// 	background.style.backgroundImage = 'url("../../images/overlay.png"), linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("../../images/bg.jpg");';
-// 	console.log("changing to group background");
-// }
 
-// function fadedBackground() {
-// 	var background = document.getElementsByClassName("bg fixed");
-// 	console.log(background.css("background-image"));
-// 	background[0].style.backgroundImage = 'url("../../images/overlay.png"), linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("../../images/bg_back.jpg");';
-// 	console.log("changing to faded background");
-// }
+function onModalClick(modalName) {
+	document.getElementById(modalName).style.display = "block";
+}
+
+function onCloseClick(modalName) {
+	document.getElementById(modalName).style.display = "none";
+}
+
+window.onclick = function(event) {
+	if (event.target == this.document.getElementById("ifritModal") || event.target == this.document.getElementById("shivaniModal") || event.target == this.document.getElementById("aashishModal") ||event.target == this.document.getElementById("gautamModal") ||event.target == this.document.getElementById("sanjeevModal") ||event.target == this.document.getElementById("sivamModal") ||event.target == this.document.getElementById("vamikaModal") ||event.target == this.document.getElementById("sanjanaModal") ||event.target == this.document.getElementById("anirudhModal")) {
+	  this.document.getElementById("ifritModal").style.display = "none";
+	  this.document.getElementById("shivaniModal").style.display = "none";
+	  this.document.getElementById("aashishModal").style.display = "none";
+	  this.document.getElementById("gautamModal").style.display = "none";
+	  this.document.getElementById("sanjeevModal").style.display = "none";
+	  this.document.getElementById("sivamModal").style.display = "none";
+	  this.document.getElementById("vamikaModal").style.display = "none";
+	  this.document.getElementById("sanjanaModal").style.display = "none";
+	  this.document.getElementById("anirudhModal").style.display = "none";
+	}
+  }
