@@ -298,6 +298,7 @@
 						items[i].classList.remove("col-6");
 					}
 					document.getElementById("tictactoe").style.visibility = "visible";
+					sidebyside();
 				});
 				breakpoints.on('large',function() {
 					let items = document.getElementsByClassName("team");
@@ -307,6 +308,7 @@
 						items[i].classList.remove("col-4-xxsmall");
 					}
 					document.getElementById("tictactoe").style.visibility = "hidden";
+					sidebyside();
 				});
 				breakpoints.on('medium',function() {
 					let items = document.getElementsByClassName("team");
@@ -316,6 +318,7 @@
 						items[i].classList.remove("col-4-xxsmall");
 					}
 					document.getElementById("tictactoe").style.visibility = "hidden";
+					topdown();
 				});
 				breakpoints.on('<=small',function() {
 					let items = document.getElementsByClassName("team");
@@ -325,6 +328,7 @@
 						items[i].classList.remove("col-6");
 					}
 					document.getElementById("tictactoe").style.visibility = "hidden";
+					topdown();
 				});
 			
 
@@ -336,6 +340,64 @@
 			/* some code goes here */ 
 
 })(jQuery);
+
+//function to switch modal to side by side view (large screen)
+function sidebyside() {
+	//minimize image
+	let modalImg = document.getElementsByClassName("modalImg");
+	for(i = 0;i<modalImg.length;i++) {
+		modalImg[i].style = 'width: 50%;';
+	}
+
+	let modalMainDiv = document.getElementsByClassName("modalMainDiv");
+	for(i = 0;i<modalMainDiv.length;i++) {
+		modalMainDiv[i].style = 'float: right; padding-right: 2%; width: 45%; padding-top: 1%;';
+	}
+
+	let modalH3 = document.getElementsByClassName("modalH3");
+	for(i = 0;i<modalH3.length;i++) {
+		modalH3[i].style = 'float: right;';
+	}
+
+	let modalInnerDiv = document.getElementsByClassName("modalInnerDiv");
+	for(i = 0;i<modalInnerDiv.length;i++) {
+		modalInnerDiv[i].style = '';
+	}
+
+	let modalP = document.getElementsByClassName("modalP");
+	for(i = 0;i<modalP.length;i++) {
+		modalP[i].style = '';
+	}
+}
+
+//function to switch modal to top down view (small screen)
+function topdown() {
+	//maximize image
+	let modalImg = document.getElementsByClassName("modalImg");
+	for(i = 0;i<modalImg.length;i++) {
+		modalImg[i].style = 'width: 100%;';
+	}
+
+	let modalMainDiv = document.getElementsByClassName("modalMainDiv");
+	for(i = 0;i<modalMainDiv.length;i++) {
+		modalMainDiv[i].style = '';
+	}
+
+	let modalH3 = document.getElementsByClassName("modalH3");
+	for(i = 0;i<modalH3.length;i++) {
+		modalH3[i].style = 'float: left; display: block;';
+	}
+
+	let modalInnerDiv = document.getElementsByClassName("modalInnerDiv");
+	for(i = 0;i<modalInnerDiv.length;i++) {
+		modalInnerDiv[i].style = 'float: right; display: block;';
+	}
+
+	let modalP = document.getElementsByClassName("modalP");
+	for(i = 0;i<modalP.length;i++) {
+		modalP[i].style = 'display: inline-block;';
+	}
+}
 
 // trigger code to display 
 function displayCodeSnippet(codeSnippet,tag) {
