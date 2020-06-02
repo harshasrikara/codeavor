@@ -286,10 +286,10 @@
 
 				breakpoints.on('>large',function() {
 					if(location.href.split("/").slice(-1)[0] === "") {
-						document.querySelector(".bg").style = 'background-image: url("../../images/overlay.png"), linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("../../images/bg.jpg");';
+						document.querySelector(".bg").style = 'background-image: url("../../images/overlay.png"), linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("../../images/bg_back.jpg");';
 					}
 					if(location.href.split("/").slice(-1)[0] === "index.html") {
-						document.querySelector(".bg").style = 'background-image: url("../../images/overlay.png"), linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("../../images/bg.jpg");';
+						document.querySelector(".bg").style = 'background-image: url("../../images/overlay.png"), linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("../../images/bg_back.jpg");';
 					}
 					let items = document.getElementsByClassName("team");
 					for (let i = 0; i < items.length; i++) {
