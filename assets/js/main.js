@@ -468,7 +468,7 @@ function validateAashishBirthdayPresent() {
 	}
 	if(valid) {
 		//change this line to decide where it should redirect to
-		window.location.replace("https://harshasrikara.com");
+		window.location.replace("https://codeavor.dev/party.html");
 	}
 }
 
@@ -520,7 +520,7 @@ function checkAll() {
 }
 
 function resetImages() {
-	document.getElementById("ifrit").src = "images/profiles/ifrit.jpg";
+	document.getElementById("ifrit").src = "images/profiles/atharv.jpeg";
 	document.getElementById("shivani").src = "images/profiles/shivani.jpeg";
 	document.getElementById("aashish").src = "images/profiles/aashish.jpeg";
 	document.getElementById("gautam").src = "images/profiles/gautam.jpg";
@@ -528,7 +528,7 @@ function resetImages() {
 	document.getElementById("sivam").src = "images/profiles/sivam.jpg";
 	document.getElementById("vamika").src = "images/profiles/vamika.jpeg";
 	document.getElementById("sanjana").src = "images/profiles/sanjana.jpg";
-	document.getElementById("anirudh").src = "images/profiles/anirudh.jpeg";
+	document.getElementById("anirudh").src = "images/profiles/profile.jpg";
 
 	document.getElementById("meetOurTeam").innerHTML = "Meet Our Team<a id='tictactoe' onclick='activateTicTacToeMode();' style='float: right;' class='icon solid fa-lg fa-user-secret'><span class='label'>GitHub</span></a>";
 	arr = []; //reset the array storing the order of photos clicked
