@@ -414,12 +414,16 @@ function displayCodeSnippet(codeSnippet,tag) {
 }
 
 //tic tac toe driver code
+//global variable to track order of boxes clicked
+let arr = [];
+
 function activateTicTacToeMode() {
 	document.getElementById("meetOurTeam").innerHTML = "Tic Tac Toe Mode Activated";
 }
 
 function tictactoe(imgID) {
 	if(document.getElementById("meetOurTeam").innerHTML.includes("Tic Tac Toe Mode Activated")) {
+		arr.push(imgID);
 		let value = document.getElementById("tictactoeValue").innerHTML;
 		if(value === "Circle") {
 			if(document.getElementById(imgID).src.includes("circle")) {
@@ -446,6 +450,25 @@ function tictactoe(imgID) {
 			}
 		}
 		validateTicTacToe();
+		if(arr.length === 9) {
+			validateAashishBirthdayPresent();
+		}
+	}
+}
+
+function validateAashishBirthdayPresent() {
+	console.log(arr);
+	//change this order to decide what the correct order should be
+	let correctOrder = ["ifrit", "shivani", "aashish", "sivam", "anirudh", "sanjana", "vamika", "gautam", "sanjeev"];
+	valid = true;
+	for(i = 0; i < arr.length;i++) {
+		if(arr[i]!==correctOrder[i]) {
+			valid = false;
+		}
+	}
+	if(valid) {
+		//change this line to decide where it should redirect to
+		window.location.replace("https://harshasrikara.com");
 	}
 }
 
@@ -508,6 +531,7 @@ function resetImages() {
 	document.getElementById("anirudh").src = "images/profiles/anirudh.jpeg";
 
 	document.getElementById("meetOurTeam").innerHTML = "Meet Our Team<a id='tictactoe' onclick='activateTicTacToeMode();' style='float: right;' class='icon solid fa-lg fa-user-secret'><span class='label'>GitHub</span></a>";
+	arr = []; //reset the array storing the order of photos clicked
 	
 }
 
