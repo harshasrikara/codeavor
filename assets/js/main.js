@@ -459,7 +459,7 @@ function tictactoe(imgID) {
 function validateAashishBirthdayPresent() {
 	console.log(arr);
 	//change this order to decide what the correct order should be
-	let correctOrder = ["ifrit", "shivani", "aashish", "sivam", "anirudh", "sanjana", "vamika", "gautam", "sanjeev"];
+	let correctOrder = ["ifrit", "aashish", "gautam", "sivam", "shivani", "sanjana", "sanjeev", "vamika", "anirudh"];
 	valid = true;
 	for(i = 0; i < arr.length;i++) {
 		if(arr[i]!==correctOrder[i]) {
