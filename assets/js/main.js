@@ -497,7 +497,7 @@ function checkAll() {
 }
 
 function resetImages() {
-	document.getElementById("ifrit").src = "images/profiles/ifrit.jpg";
+	document.getElementById("ifrit").src = "images/profiles/atharv.jpeg";
 	document.getElementById("shivani").src = "images/profiles/shivani.jpeg";
 	document.getElementById("aashish").src = "images/profiles/aashish.jpeg";
 	document.getElementById("gautam").src = "images/profiles/gautam.jpg";
